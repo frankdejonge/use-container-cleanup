@@ -1,0 +1,18 @@
+name: 'Cleanup Docker Containers'
+description: 'Cleanup old docker containers on ghcr.io'
+inputs:
+  token:
+    required: true
+    description: 'PAT for GitHub'
+  package:
+    required: true
+    description: 'Package name to cleanup'
+  versions:
+    required: true
+    description: 'Number of versions to keep'
+branding:
+  icon: trash-2
+  color: purple
+runs:
+  using: 'node12'
+  main: './dist/index.js'
