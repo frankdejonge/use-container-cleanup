@@ -62,30 +62,3 @@ function latestTag(tags: string[]): string {
 
     return tags.pop();
 }
-
-
-function numericVersion(tags) {
-    let version = tags.find(tag => valid(tag));
-
-    if (!version) {
-        return 0;
-    }
-
-    let parts = version.split('.');
-    console.log(parts);
-    let sum = 0;
-    let a = ['1', '23'];
-
-    for (let i = parts.length; i > 0; i--) {
-        console.log(i);
-        console.log(parts.length - i);
-        console.log(parts.length - i, parts[parts.length - i]);
-        // // increase the numbers based on their position to ensure single number ordering
-        // // version 1.2.0 should be lower than 1.30.0 but higher than 1.1.123
-        sum += Math.pow(10, (i *  3)) * parseInt(parts[parts.length - i]);
-    }
-
-    return sum;
-}
-
-numericVersion(['1.23']);
