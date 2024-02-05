@@ -14,5 +14,5 @@ branding:
   icon: trash-2
   color: purple
 runs:
-  using: 'node12'
+  using: 'node20'
   main: './dist/index.js'
